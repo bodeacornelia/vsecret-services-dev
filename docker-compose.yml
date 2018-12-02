@@ -1,0 +1,40 @@
+version: '3'
+services:
+  frontend:
+    image: bodeanelly/node
+    container_name: frontend
+    volumes:
+      - './vclothesFrontend:/usr/src/app'
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    depends_on:
+      - backend
+
+  backend:
+    image: bodeanelly/node
+    container_name: backend
+    env_file:
+      - ./vclothes/.env
+    volumes:
+      - './vclothesBackend:/usr/src/app'
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7.24
+    container_name: mysql
+    env_file:
+      - .env
+    volumes:
+      - 'db-data:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    ports:
+      - ${MYSQLDB_LOCAL_PORT}:${MYSQLDB_PORT}
+
+volumes:
+  db-data:
+    driver: local

@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+
+# node-waf configuration
+.lock-wscript
+
+#npm project config file
+.npmrc
+
+# Compiled binary addons
+#vclothesUI/dist/*
+
+# Dependency directory
+vclothesUI/node_modules/*
+vclothes/node_modules/*
+
+yarn-error.log
+yarn.lock
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# configuration files
+vclothesUI/config/environments/*
+vclothesUI/!config/environments/example.ts
+
+# editor files
+#vclothesUI/.idea/*
+
+# ENV
+vclothes/.env
+.env
