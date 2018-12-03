@@ -5,7 +5,7 @@ const config = process.env;
 
 //local mysql db connection
 const connection = mysql.createConnection({
-    host     : '192.168.1.5',
+    host     : '172.22.140.120',
     port     : config.DB_PORT,
     user     : config.DB_USER,
     password : config.DB_PASSORD,

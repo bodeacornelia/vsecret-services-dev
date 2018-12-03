@@ -9,7 +9,7 @@ logs
 .npmrc
 
 # Compiled binary addons
-#vclothesUI/dist/*
+vclothesUI/dist/*
 
 # Dependency directory
 vclothesUI/node_modules/*
@@ -27,7 +27,7 @@ vclothesUI/config/environments/*
 vclothesUI/!config/environments/example.ts
 
 # editor files
-#vclothesUI/.idea/*
+vclothesUI/.idea/*
 
 # ENV
 vclothes/.env

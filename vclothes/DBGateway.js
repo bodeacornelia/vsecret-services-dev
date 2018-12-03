@@ -5,7 +5,6 @@ const sql = require('./db.js')
 class DBGateway {
     constructor(table) {
         this.table = table;
-        console.log("saeawe");
     }
 
     create(data, callback) {
