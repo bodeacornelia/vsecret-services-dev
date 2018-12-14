@@ -1,22 +1,18 @@
 version: '3'
 services:
   frontend:
-    image: bodeanelly/node
+    image: bodeanelly/vsecretfrontend
     container_name: frontend
-    volumes:
-      - './vclothesUI:/usr/src/app'
     ports:
       - ${FRONTEND_PORT}:${FRONTEND_PORT}
     depends_on:
       - backend
 
   backend:
-    image: bodeanelly/node
+    image: bodeanelly/vsecretbackend
     container_name: backend
     env_file:
       - ./vclothes/.env
-    volumes:
-      - './vclothes:/usr/src/app'
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
     depends_on:

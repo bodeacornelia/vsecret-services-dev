@@ -12,7 +12,6 @@ logs
 vclothesUI/dist/*
 
 # Dependency directory
-vclothesUI/node_modules/*
 vclothes/node_modules/*
 
 yarn-error.log
