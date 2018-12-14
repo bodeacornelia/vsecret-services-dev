@@ -1,3 +1,6 @@
 [submodule "/home/corneliabodea/git/vsecret-services-dev/vc"]
 	path = /home/corneliabodea/git/vsecret-services-dev/vc
 	url = git@github.com:bodeacornelia/vclothes.git
+[submodule "/home/corneliabodea/git/vsecret-services-dev/vclothesUI"]
+	path = /home/corneliabodea/git/vsecret-services-dev/vclothesUI
+	url = git@github.com:bodeacornelia/vclothesUI.git
