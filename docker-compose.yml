@@ -1,16 +1,18 @@
 version: '3'
 services:
-  # frontend:
-  #   image: node:8.11.3
-  #   container_name: frontend
-  #   working_dir: /usr/src/app
-  #   command: npm start
-  #   volumes:
-  #     - './vclothesUI:/usr/src/app'
-  #   ports:
-  #     - ${FRONTEND_PORT}:${FRONTEND_PORT}
-  #   depends_on:
-  #     - backend
+  frontend:
+    image: node:8.11.3
+    container_name: frontend
+    working_dir: /usr/src/app
+    command: npm start
+    env_file: 
+      - .env
+    volumes:
+      - './vclothesUI:/usr/src/app'
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    depends_on:
+      - backend
 
   backend:
     image: node:8.11.3
