@@ -9,11 +9,15 @@ services:
       - .env
     volumes:
       - './vclothesUI:/usr/src/app'
+    expose: 
+      - ${FRONTEND_PORT}
     ports:
       - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    links:
+      - backend
     depends_on:
       - backend
-
+      
   backend:
     image: node:8.11.3
     container_name: backend
@@ -23,6 +27,8 @@ services:
       - .env
     volumes:
       - './vc:/usr/src/app'
+    expose: 
+      - ${BACKEND_PORT}
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
     depends_on:
