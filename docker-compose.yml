@@ -13,8 +13,6 @@ services:
       - ${FRONTEND_PORT}
     ports:
       - ${FRONTEND_PORT}:${FRONTEND_PORT}
-    links:
-      - backend
     depends_on:
       - backend
       
