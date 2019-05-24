@@ -1,42 +1,26 @@
 version: '3'
 services:
-  # frontend:
-  #   image: node:8.11.3
-  #   container_name: frontend
-  #   working_dir: /usr/src/app
-  #   command: npm start
-  #   env_file: 
-  #     - .env
-  #   volumes:
-  #     - './vclothesUI:/usr/src/app'
-  #   expose: 
-  #     - ${FRONTEND_PORT}
-  #   ports:
-  #     - ${FRONTEND_PORT}:${FRONTEND_PORT}
-  #   depends_on:
-  #     - backend
-      
-  # backend:
-  #   image: node:8.11.3
-  #   container_name: backend
-  #   working_dir: /usr/src/app
-  #   command: npm start
-  #   env_file: 
-  #     - .env
-  #   volumes:
-  #     - './vc:/usr/src/app'
-  #   expose: 
-  #     - ${BACKEND_PORT}
-  #   ports:
-  #     - ${BACKEND_PORT}:${BACKEND_PORT}
-  #   depends_on:
-  #     - mysql
+  frontend:
+    image: node:8.11.3
+    container_name: frontend
+    working_dir: /usr/src/app
+    command: npm start
+    env_file: 
+      - .env
+    volumes:
+      - './vclothesUI:/usr/src/app'
+    expose: 
+      - ${FRONTEND_PORT}
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    depends_on:
+      - backend
 
   backend:
     image: node:8.11.3
     container_name: backend
     working_dir: /usr/src/app
-    command: bash -c "npm i typeorm -g && npm start"
+    command: "npm start"
     env_file: 
       - .env
     volumes:
